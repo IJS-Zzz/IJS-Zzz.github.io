@@ -307,6 +307,20 @@ footer{
     background: #ccc url(img/arrow.png) no-repeat center;
 }
 
+.loading_box{
+    overflow: auto;
+    width: 200px;
+    height: 5px;
+    margin: 0 auto 20px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#loading{
+    height: 100%;
+    background-color: #3a4660;
+}
+
+
 
 /*Каталог, основная страница*/
 .main_catalog_home{
