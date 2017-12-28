@@ -294,6 +294,10 @@ footer{
 }
 .main_index button:active{
     background-color: #6a7690;
+    box-shadow: none;
+}
+.main_index button:focus{
+    outline: none;
 }
 .main_index button[onclick="prev()"]{
     background: #ccc url(img/arrow.png) no-repeat center;

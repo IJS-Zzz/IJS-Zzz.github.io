@@ -3,6 +3,7 @@ var images = [
     "img/main_image_2.jpg",
     "img/main_image_3.jpg"
 ];
+
 var num = 0;
 
 function next() {
@@ -22,3 +23,5 @@ function prev(){
     }
     slider.src = images[num]
 }
+
+var t = setInterval(next, 5000);
