@@ -30,9 +30,9 @@ function loading() {
     loading_persent += 0.1;
     if(loading_persent > 100){
         loading_persent = 0;
+        next()
     }
     load.style.width = loading_persent + '%';
 }
 
-var t = setInterval(next, 5000);
-var l = setInterval(loading, 5);
+var l = setInterval(loading, 3);
