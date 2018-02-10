@@ -1,109 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Love with Aireend</title>
-    <link rel="icon" type="image/png" href="img/icon.png">
+    <meta charset="UTF-8">
+    <title>VadimS Media</title>
+    <link rel="icon" type="image/png" href="images/logo_mini.png">
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- slider script -->
-    <script type="text/javascript" src="slider.js"></script>
+    
+    <!-- VideoJS Player -->
+    <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+
+    <!-- Video Changer -->
+    <script type="text/javascript" src="video-change.js"></script>
 </head>
 <body>
-    <!-- Навигация -->
-    <header>
-        <div class="header">
-        <!-- Логотип -->
-            <div id="logo">
-            <a href="index.html">
-                <img src="img/logo.jpg" alt="logo">
-            </a>
-        </div>
-        <div id="logo_name">Clo<br>Designer</div>
-        
-        
-        <!-- Меню -->
-        <ul id="menu">
-            <li class="menu_main">
-                <a href="index.html">
-                    <p>Главная</p>
-                </a>
-            </li>
-            <li class="menu_catalog">
-                <a href="catalog.html">
-                    <p>Каталог</p>
+    <div id='container'>
+        <header>
+            <div id="header_logo">
+                <a href="#" onclick="viewHome()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-0.0576624870300293 30.464908599853516 200.05764770507812 143.03509521484375" role="img" preserveAspectRatio="xMidYMid meet" style="stroke-width: 0px;">
+                        <g>
+                            <path d="M199.2 91.1c-5.7-39.5-44.9-67.4-83.9-59.2-28 5.9-47 22.8-54.8 50.4-7.9 28-.4 52.5 20.7 72.6 4.5 4.3 10 7.6 15.5 11.7H2.1c-.1 0-.2.1-.3.1-2.3 1.4-2.5 4.7-.4 6.4.1.1.3.2.4.3h22.8v.1h104.2c31.1 0 59.3-21.1 68.2-51 .7-2.3 1.2-4.7 1.8-7.1.8-3.7 1.2-7.5 1.2-11.3v-3.8c0-3.1-.3-6.1-.8-9.2 0 .1 0 0 0 0zM129 166.4c-35.3 0-64.5-29.3-64.5-64.7.1-35.5 28.6-63.9 64.1-63.9 35.5 0 64.8 29 64.9 64.3.1 35-29.3 64.3-64.5 64.3z"></path>
+                            <path d="M128.6 85.8c-10.9 0-19.1-8.1-19.2-18.9-.1-11 8.1-19.4 19-19.4s19.3 8.4 19.3 19.2c0 10.6-8.4 19.1-19.1 19.1zm12.1-19.4c.1-6.4-5.7-12.3-12.1-12.3-6.3 0-11.9 5.6-12 12-.1 6.5 5.2 12 11.7 12.2 6.5.2 12.3-5.4 12.4-11.9z"></path>
+                            <path d="M182.7 102.3c0 10.7-8.3 18.8-19.2 18.7-10.7-.1-19-8.4-19-19.2 0-10.8 8.5-19.4 19.2-19.4 10.9.1 19 8.6 19 19.9zm-19 11.6c6.8-.1 12.1-5.7 12-12.8-.1-6.3-5.7-11.6-12.1-11.5-6.5.1-12.3 6.1-12.2 12.4.2 6.4 5.9 11.9 12.3 11.9z"></path>
+                            <path d="M109.5 137.2c.1-10.9 8.4-19.1 19.4-19 10.7.1 19 8.5 18.9 19.2-.1 10.5-8.6 19.1-19.2 19.1-10.9.1-19.2-8.3-19.1-19.3zm7.1-.4c-.1 6.5 5.6 12.3 12.1 12.3 6.2 0 12-5.8 12.1-12 .1-6.5-5.3-12-11.8-12.1-6.8-.2-12.4 5.1-12.4 11.8z"></path>
+                            <path d="M74.5 101.7c0-10.7 8.3-19.1 19-19.2 10.7-.1 19.3 8.5 19.3 19.3 0 10.6-8.5 19.1-19.1 19.2-10.9.1-19.3-8.3-19.2-19.3zm31.1 0c0-6.5-5.5-12-11.9-12.1-6.3 0-12.3 6-12.3 12.3.1 6.3 5.8 11.9 12.1 12 6.7 0 12.1-5.5 12.1-12.2z"></path>
+                            <path d="M128.7 89.6c6.8.1 12 5.4 11.9 12.3-.1 6.7-5.6 12.2-12.3 12.1-6.8-.1-12.1-5.5-12-12.4.3-6.8 5.6-12 12.4-12zm4.9 12.3c0-2.8-2.2-5.1-4.9-5.2-2.7-.1-5 2.2-5 5s2.2 5.2 4.9 5.2c2.6.1 4.9-2.3 5-5z"></path>
+                            <path d="M133.6 101.9c0 2.7-2.4 5.1-5 5.1-2.7 0-4.9-2.4-4.9-5.2 0-2.8 2.3-5.1 5-5 2.7 0 4.9 2.3 4.9 5.1z"></path>
+                        </g>
                     </a>
-                <!-- <ul>
-                    <li class="menu_catalog menu_catalog_item">
-                        <a href="catalog/jacket.html">
-                            <p>Косуха</p>
+                </div>
+                <div id="header_title">
+                    <h1>
+                        <a href="#" onclick="viewHome()">
+                            <!-- JEFF CARR -->
+                            VadimS
+                            <!-- VADIM S -->
+                            <br>
                         </a>
-                    </li>
-                    <li class="menu_catalog menu_catalog_item">
-                        <a href="catalog/red_dress.html">
-                            <p>Вечернее платье</p>
+                        <a href="#" onclick="viewHome()">
+                            <!-- VIDEOGRAPHER -->
+                            Media
+                            <!-- MEDIA -->
+                        </a>
+                    </h1>
+                </div>
+                <div id="header_menu">
+                    <ul>
+                        <li>
+                            <a id="menu_home" href="#" onclick="viewHome()">home</a>
+                        </li>
+
+                        <li>
+                            <a id="menu_bio" href="#" onclick="viewBio()">bio &amp; contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+
+            <main>
+                <!-- Home block -->
+                <div id="Home">
+
+                    <div id="main_box">
+                        <!-- <video controls>
+                            <source src="video/IMG_8416.mp4" type="video/mp4">
+                            <p>Your browser does not support the video tag.</p>
+                        </video> -->
+
+
+                        <!-- VideoJS Player -->
+                        <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="video/4.png" data-setup="{}">
+                            <source id="mp4-video" src="video/IMG_8416.mp4" type='video/mp4'>
+
+                            <!-- !!!!!!!!!!! -->
+                            <source src="MY_VIDEO.webm" type='video/webm'>
+                            <!-- !!!!!!!!!!!!!!!!! -->
+
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                        </video>
+                        <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+                        <!-- end VideoJS Player -->
+
+                    </div>
+
+                    <div id="more_box">
+                        <div class="more_box-content" onclick="newVideo(1)" style="background: url(video/1.jpeg);">
+                            <a href="#main_box">
+                                <div class="more_box-border-select">
+                                    <h3 class="video_name">Video 1</h3>
+                                </div>
                             </a>
-                    </li>
-                    <li class="menu_catalog menu_catalog_item">
-                        <a href="catalog/blue_dress.html">
-                            <p>Замшевое платье</p>
-                        </a>
-                    </li>
-                </ul> -->
-            </li>
-            <li class="menu_contacts">
-                <a href="contacts.html">
-                    <p>Контакты</p>
-                </a>
-            </li>
-        </ul>
-        </div>
-    </header>
-    
+                        </div>
 
-    <!-- Обертка, чтобы основная часть
-    не пересекалась с header и footer -->
-    <div id="wrap">
-        <!-- Основная часть -->
-        <main class="main">
-            <div class="main_index">
-                <h1>Clo Designer</h1>
-                <h2>Магазин Дизайнеры одежды</h2>
+                        <div class="more_box-content" onclick="newVideo(2)" style="background: url(video/2.png);">
+                            <a href="#main_box">
+                                <div class="more_box-border-select">
+                                    <h3 class="video_name">Video 2</h3>
+                                </div>
+                            </a>
+                        </div>
 
-                <div class="main_index_image_box">
-                    <a href="catalog.html">
-                        <img id="slider" src="img/main_image.jpg" alt="Постер главной страницы" >
+                        <div class="more_box-content" onclick="newVideo(3)" style="background: url(video/3.png);">
+                            <a href="#main_box">
+                                <div class="more_box-border-select">
+                                    <h3 class="video_name">Video 3</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="more_box-content" onclick="newVideo(4)" style="background: url(video/4.png);">
+                            <a href="#main_box">
+                                <div class="more_box-border-select">
+                                    <h3 class="video_name">Video 4</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end Home block -->
+
+                <!-- Bio block -->
+                <div id="Bio">
+                    <img id="bio_image" src="images/bio.png">
+                    <div id="bio_info" class="clr">
+                        <div class="bio_title">
+                            <h2>Jeff Carr, b. 2023,</h2>
+                            <h2>Based in San Francisco, California, USA</h2>
+                            <p> — </p>
+                        </div>
+
+                        <div class="bio_col1">
+                            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+                            <p>This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
+
+                            <p>Contact me - <br>
+                            <a href="mailto:INFO@MYSITE.COM">INFO@MYSITE.COM</a></p>
+                            
+                        </div>
+
+                        <div class="bio_col2">
+                            <h5>AWARDS/HIGHLIGHTS</h5>
+                            <p> — </p>
+                            <p>2023, I’m an item. ​Click here to edit me.<br>
+                            2023, I’m an item. ​Click here to edit me.<br>
+                            2023, I’m an item. ​Click here to edit me.<br>
+                            2023, I’m an item. ​Click here to edit me.<br>
+                            2023, I’m an item. ​Click here to edit me.<br>
+                            2023, I’m an item. ​Click here to edit me.<br>
+                            2023, I’m an item. ​Click here to edit me.<br>
+                            2023, I’m an item. ​Click here to edit me.<br></p>
+                        </div>
+
+                        <div class="line">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- end Bio block -->
+
+            </main>
+            <footer>
+                <div id="footer_topline"></div>
+                <div id="footer_info">
+                    <p>&copy; 2018 by Vadim Safronov.</p>
+                </div>
+                <div id="footer_socialbar">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="images/vimeo.png">
+                            </a>
+                    </li><!-- 
+                --><li>
+                    <a href="#">
+                        <img src="images/facebook.png">
                     </a>
-                </div>
-                <div class="loading_box">
-                    <div id="loading"></div>
-                </div>
-                <button onclick="prev()"></button>
-                <button onclick="next()"></button>
-
-                <p>Добропозаловать на страницу нашего интернет магазина.<br>
-                    Рады, что посетили наш портал.<br>
-                Приятного вам времяпрепровождения.</p>
-            </div>
-        </main>
-    </div>
-
-
-    <!--  Футер -->
-    <footer>
-        <div class="footer">
-            <div id="footer_info">
-                <p>
-                Disign by Aireend.<br>Link - 
-                <a href="https://vk.com" target="_blank">
-                    <img src="img/vk.png" alt="Ссылка VK" height="20"></a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="img/instagram.png" alt="Ссылка instagram" height="20"></a>
-                </p>
-            </div>
-            <div id="all_rights_protections">Все права защищены.&nbsp;&copy;&nbsp;2017</div>
+                    </li><!-- 
+                --><li>
+                    <a href="#">
+                        <img src="images/you_tube.png">
+                    </a>
+                    </li><!-- 
+                --><li>
+                    <a href="#">
+                        <img src="images/instagram.png">
+                    </a>
+                </li>
+            </ul>
         </div>
     </footer>
+</div>
 </body>
-
 </html>
