@@ -350,12 +350,12 @@ main{
 
 
 /*Test Mod*/
-#Home{
+/*#Home{
     display: none;
 }
 #Bio{
     display: block;
-}
+}*/
 .view{
     background: #eee;
 }
