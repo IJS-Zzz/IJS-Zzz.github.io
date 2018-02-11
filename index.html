@@ -74,13 +74,18 @@
                         </video> -->
 
 
+                        <!-- Vimeo Player -->
+                        <iframe id="Vimeo-video" src="https://player.vimeo.com/video/199896940?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <!-- end Vimeo Player -->
+                        
+
                         <!-- VideoJS Player -->
                         <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="video/4.png" data-setup="{}">
                             <source id="mp4-video" src="video/IMG_8416.mp4" type='video/mp4'>
 
-                            <!-- !!!!!!!!!!! -->
+                            !!!!!!!!!!!
                             <source src="MY_VIDEO.webm" type='video/webm'>
-                            <!-- !!!!!!!!!!!!!!!!! -->
+                            !!!!!!!!!!!!!!!!!
 
                             <p class="vjs-no-js">
                                 To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -93,7 +98,7 @@
                     </div>
 
                     <div id="more_box">
-                        <div class="more_box-content" onclick="newVideo(1)" style="background: url(video/1.jpeg);">
+                        <div class="more_box-content" onclick="newVideo(0); newVimeoVideo(0); VimeoPoster(this, 0)" style="background-image: url(video/1.jpeg);">
                             <a href="#main_box">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 1</h3>
@@ -101,7 +106,7 @@
                             </a>
                         </div>
 
-                        <div class="more_box-content" onclick="newVideo(2)" style="background: url(video/2.png);">
+                        <div class="more_box-content" onclick="newVideo(1); newVimeoVideo(1); VimeoPoster(this, 1)" style="background-image: url(video/2.png);">
                             <a href="#main_box">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 2</h3>
@@ -109,7 +114,7 @@
                             </a>
                         </div>
 
-                        <div class="more_box-content" onclick="newVideo(3)" style="background: url(video/3.png);">
+                        <div class="more_box-content" onclick="newVideo(2); newVimeoVideo(2); VimeoPoster(this, 2)" style="background-image: url(video/3.png);">
                             <a href="#main_box">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 3</h3>
@@ -118,7 +123,7 @@
                         </div>
 
 
-                        <div class="more_box-content" onclick="newVideo(4)" style="background: url(video/4.png);">
+                        <div class="more_box-content" onclick="newVideo(3); newVimeoVideo(3);VimeoPoster(this, 3);" style="background-image: url(video/4.png);">
                             <a href="#main_box">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 4</h3>
@@ -166,8 +171,9 @@
                         </div>
 
                     </div>
+                    
 
-
+                    <iframe id="vimeo" src="https://player.vimeo.com/video/199896940?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
                 <!-- end Bio block -->
 

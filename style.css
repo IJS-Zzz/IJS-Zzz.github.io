@@ -227,8 +227,15 @@ main{
     height: 100%;
 }
 #my-video{
+    display: none;
+
     width: 100%;
     height: 100%
+}
+
+#Vimeo-video{
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -255,6 +262,7 @@ main{
     margin-bottom: 12px;
 
     box-sizing: border-box;
+    background-size: cover;
 
 }
 .more_box-content:nth-child(odd){
