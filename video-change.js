@@ -1,12 +1,13 @@
 
-var video_file = [
-    ["video/video-1.MP4", "video/1.jpeg"],
-    ["video/video-2.MP4", "video/2.png"],
-    ["video/video-3.MP4", "video/3.png"],
-    ["video/video-4.MP4", "video/4.png"],
-];
+var botTelegram_token = '531154660:AAHbcIl9rlAdsM0ykDih1zP3ec-OlvQ_qmM';
+
+// alert('Этот сайт создан по заказу Вадика ака ПИЗДИЛЫ Сафронова. Приятного просмотра!');
+
 
 //!!!!!!!!!!!!!!!!!!!
+// id видосов Vimeo
+// example:
+//         https://vimeo.com/{id видоса}
 var vimeo_file = [
     "199896940", //index 0, это Опыт - Maaskantje
     "224036340", //index 1, Ruka may 17
@@ -14,6 +15,15 @@ var vimeo_file = [
     "160966193", //index 3, Мокрое стекло
 ];
 // !!!!!!!!!!!!!!!!!!
+
+
+
+var video_file = [
+    ["video/video-1.MP4", "video/1.jpeg"],
+    ["video/video-2.MP4", "video/2.png"],
+    ["video/video-3.MP4", "video/3.png"],
+    ["video/video-4.MP4", "video/4.png"],
+];
 
 
 function viewHome() {
@@ -82,13 +92,57 @@ function infoFromVimeo(i=0) {
     xhr.send()
 
     if (xhr.status != 200){
-        console.log('Request to Vimeo — ' + xhr.status + ': ' + xhr.statusText)
-        return
+        console.log('Request to Vimeo — ' + xhr.status + ': ' + xhr.statusText);
+        return null;
     }
 
     var data = JSON.parse(xhr.responseText);
-    return data[0]
+    return data[0];
 }
 
+
+
+
+
+// Ip function
+
+function getVisitorIp() {
+    var ip_info = new XMLHttpRequest();
+    ip_info.open('GET', 'https://ipinfo.io/json', false);
+    ip_info.send();
+
+    if (ip_info.status != 200){
+        console.log('Request to IpInfo.io — ' + ip_info.status + ': ' + ip_info.statusText);
+        return null;
+    }
+    var ip_data = JSON.parse(ip_info.responseText)
+    // console.log(ip_data);
+    return ip_data;
+}
+
+
+
+function send_message_to_Tbot(text, token=botTelegram_token) {
+    var api_url = "https://api.telegram.org/bot{token}/".replace('{token}', token);
+    var body = 'sendMessage?chat_id=381294904&text={text}'.replace('{text}', text);
+    url = api_url + body;
+
+    // console.log(url);
+    // console.log(api_url);
+    // console.log(body);
+
+    var bot = new XMLHttpRequest();
+    bot.open('GET', url, true);
+    bot.send();
+
+}
+
+// var my_ip = '';
+var my_ip = '213.221.50.234';
+
+var visitor = getVisitorIp();
+if (visitor.ip != my_ip) {
+    send_message_to_Tbot('New Visitor:%0A' + visitor.city + ': ' + visitor.ip);
+}
 
 
