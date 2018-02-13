@@ -1,8 +1,7 @@
 
-var botTelegram_token = '531154660:AAHbcIl9rlAdsM0ykDih1zP3ec-OlvQ_qmM';
-
 // alert('Этот сайт создан по заказу Вадика ака ПИЗДИЛЫ Сафронова. Приятного просмотра!');
 
+var video_Now = 0; //index 0, Индекс видео в плеере!
 
 //!!!!!!!!!!!!!!!!!!!
 // id видосов Vimeo
@@ -16,14 +15,6 @@ var vimeo_file = [
 ];
 // !!!!!!!!!!!!!!!!!!
 
-
-
-var video_file = [
-    ["video/video-1.MP4", "video/1.jpeg"],
-    ["video/video-2.MP4", "video/2.png"],
-    ["video/video-3.MP4", "video/3.png"],
-    ["video/video-4.MP4", "video/4.png"],
-];
 
 
 function viewHome() {
@@ -52,25 +43,18 @@ function indexFile(files, i=0){
     return i
 }
 
-function newVideo(i=0) {
 
-    i = indexFile(vimeo_file, i);
+// function newVimeoVideo(i=0) {
+//     i = indexFile(vimeo_file, i);
 
-    var player = document.getElementById('my-video_html5_api');
-    player.src = video_file[i][0];
+//     var preview = document.getElementById('video-preview');
+//     preview.style.display = 'block';
 
-    var poster = document.getElementsByClassName('vjs-poster')[0];
-    poster.style.backgroundImage = 'url(' + video_file[i][1] + ')';
-}
-
-function newVimeoVideo(i=0) {
-    i = indexFile(vimeo_file, i);
-
-    var player = document.getElementById('Vimeo-video');
-    var url_video = 'https://player.vimeo.com/video/{video}?color=ffffff&title=0&byline=0&portrait=0';
-    var autoplay = '&autoplay=1'
-    player.src = url_video.replace('{video}', vimeo_file[i]);
-}
+//     var player = document.getElementById('Vimeo-player');
+//     var url_video = 'https://player.vimeo.com/video/{video}?color=ffffff&title=0&byline=0&portrait=0';
+//     var autoplay = '&autoplay=1'
+//     player.src = url_video.replace('{video}', vimeo_file[i]);
+// }
 
 function VimeoPoster(obj, i=0){
     i = indexFile(vimeo_file, i);
@@ -80,6 +64,7 @@ function VimeoPoster(obj, i=0){
     var url_poster = info.thumbnail_large; 
     obj.style.backgroundImage = 'url(' + url_poster + ')';
     obj.getElementsByClassName('video_name')[0].innerText = info.title;
+    obj.getElementsByClassName('duration')[0].innerText = formatTime(info.duration);
 }
 
 function infoFromVimeo(i=0) {
@@ -100,49 +85,60 @@ function infoFromVimeo(i=0) {
     return data[0];
 }
 
+function formatTime(duration) {
+    var seconds = duration%60;
+    var minutes = (duration - duration%60)/60;
+    var hours = (minutes - minutes%60)/60;
+    minutes = minutes%60;
 
+    var time = '';
 
-
-
-// Ip function
-
-function getVisitorIp() {
-    var ip_info = new XMLHttpRequest();
-    ip_info.open('GET', 'https://ipinfo.io/json', false);
-    ip_info.send();
-
-    if (ip_info.status != 200){
-        console.log('Request to IpInfo.io — ' + ip_info.status + ': ' + ip_info.statusText);
-        return null;
+    if (seconds < 10){
+        seconds = '0' + seconds.toString();
     }
-    var ip_data = JSON.parse(ip_info.responseText)
-    // console.log(ip_data);
-    return ip_data;
+    if (minutes < 10){
+        minutes = '0' + minutes.toString();
+    }
+    if (hours != 0){
+        time = hours.toString() + ':' + minutes + ':' + seconds;
+    } else{
+        time = minutes + ':' + seconds;
+    }
+    return time;
 }
 
 
 
-function send_message_to_Tbot(text, token=botTelegram_token) {
-    var api_url = "https://api.telegram.org/bot{token}/".replace('{token}', token);
-    var body = 'sendMessage?chat_id=381294904&text={text}'.replace('{text}', text);
-    url = api_url + body;
+function newVimeoVideo(obj, i=0) {
+    i = indexFile(vimeo_file, i);
 
-    // console.log(url);
-    // console.log(api_url);
-    // console.log(body);
+    video_Now = i;
 
-    var bot = new XMLHttpRequest();
-    bot.open('GET', url, true);
-    bot.send();
+    var preview = document.getElementById('video-preview');
+    preview.style.display = 'block';
 
+
+    var player = document.getElementById('Vimeo-player');
+    player.src = "";
+    player.style.backgroundImage = obj.style.backgroundImage;
+    document.getElementById('video-preview-title').innerText = obj.getElementsByClassName('video_name')[0].innerText;
+
+
+    // var url_video = 'https://player.vimeo.com/video/{video}?color=ffffff&title=0&byline=0&portrait=0';
+    // var autoplay = '&autoplay=1'
+    // player.src = url_video.replace('{video}', vimeo_file[i]);
 }
 
-// var my_ip = '';
-var my_ip = '213.221.50.234';
+function startVideo() {
+    var i = video_Now;
 
-var visitor = getVisitorIp();
-if (visitor.ip != my_ip) {
-    send_message_to_Tbot('New Visitor:%0A' + visitor.city + ': ' + visitor.ip);
+    var preview = document.getElementById('video-preview');
+    preview.style.display = 'none';
+
+    var player = document.getElementById('Vimeo-player');
+    var url_video = 'https://player.vimeo.com/video/{video}?color=ffffff&title=0&byline=0&portrait=0';
+    var autoplay = '&autoplay=1';
+    url_video += autoplay;
+    player.src = url_video.replace('{video}', vimeo_file[i]);
+
 }
-
-

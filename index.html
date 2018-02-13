@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VadimS Media</title>
+    <title>VaadimS Media</title>
     <link rel="icon" type="image/png" href="images/logo_mini.png">
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -16,9 +16,14 @@
 
     <!-- Video Changer -->
     <script type="text/javascript" src="video-change.js"></script>
+    
+    <!-- Visitor IP -->
+    <script type="text/javascript" src="visitor-ip.js"></script>
 
-    <!-- ip -->
-    <script type="text/javascript" src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script defer src="fontawesome-all.js"></script>
+
 </head>
 <body>
     <div id='container'>
@@ -35,104 +40,101 @@
                             <path d="M128.7 89.6c6.8.1 12 5.4 11.9 12.3-.1 6.7-5.6 12.2-12.3 12.1-6.8-.1-12.1-5.5-12-12.4.3-6.8 5.6-12 12.4-12zm4.9 12.3c0-2.8-2.2-5.1-4.9-5.2-2.7-.1-5 2.2-5 5s2.2 5.2 4.9 5.2c2.6.1 4.9-2.3 5-5z"></path>
                             <path d="M133.6 101.9c0 2.7-2.4 5.1-5 5.1-2.7 0-4.9-2.4-4.9-5.2 0-2.8 2.3-5.1 5-5 2.7 0 4.9 2.3 4.9 5.1z"></path>
                         </g>
+                </a>
+            </div>
+            <div id="header_title">
+                <h1>
+                    <a href="#" onclick="viewHome()">
+                        <!-- JEFF CARR -->
+                        VaadimS
+                        <!-- VADIM S -->
+                        <br>
                     </a>
-                </div>
-                <div id="header_title">
-                    <h1>
-                        <a href="#" onclick="viewHome()">
-                            <!-- JEFF CARR -->
-                            VadimS
-                            <!-- VADIM S -->
-                            <br>
-                        </a>
-                        <a href="#" onclick="viewHome()">
-                            <!-- VIDEOGRAPHER -->
-                            Media
-                            <!-- MEDIA -->
-                        </a>
-                    </h1>
-                </div>
-                <div id="header_menu">
-                    <ul>
-                        <li>
-                            <a id="menu_home" href="#" onclick="viewHome()">home</a>
-                        </li>
+                    <a href="#" onclick="viewHome()">
+                        <!-- VIDEOGRAPHER -->
+                        Media
+                        <!-- MEDIA -->
+                    </a>
+                </h1>
+            </div>
+            <div id="header_menu">
+                <ul>
+                    <li>
+                        <a id="menu_home" href="#" onclick="viewHome()">home</a>
+                    </li>
 
-                        <li>
-                            <a id="menu_bio" href="#" onclick="viewBio()">bio &amp; contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </header>
+                    <li>
+                        <a id="menu_bio" href="#" onclick="viewBio()">bio &amp; contact</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
 
             <main>
                 <!-- Home block -->
                 <div id="Home">
 
-                    <div id="main_box">
-                        <!-- <video controls>
-                            <source src="video/IMG_8416.mp4" type="video/mp4">
-                            <p>Your browser does not support the video tag.</p>
-                        </video> -->
+                    <div id="video">
+                        
+                        <div id="video-preview" class="view4">
+                            <div id="video-preview-title">VaadimS Portfolio</div>
 
+                            <!-- описание -->
+                            <!-- <div id="video-preview-description">Roady Productions</div> -->
+
+                            <button onclick="startVideo()"><i class="fas fa-play fa-sm"></i> Watch Now</button>
+                        </div>
 
                         <!-- Vimeo Player -->
-                        <iframe id="Vimeo-video" src="https://player.vimeo.com/video/199896940?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <iframe id="Vimeo-player" src="" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="background-image: url(video/4.png);"></iframe>
                         <!-- end Vimeo Player -->
-                        
-
-                        <!-- VideoJS Player -->
-                        <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="video/4.png" data-setup="{}">
-                            <source id="mp4-video" src="video/IMG_8416.mp4" type='video/mp4'>
-
-                            !!!!!!!!!!!
-                            <source src="MY_VIDEO.webm" type='video/webm'>
-                            !!!!!!!!!!!!!!!!!
-
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                            </p>
-                        </video>
-                        <script src="video-js/video.js"></script>
-                        <!-- end VideoJS Player -->
 
                     </div>
 
                     <div id="more_box">
-                        <div class="more_box-content" onclick="newVideo(0); newVimeoVideo(0); VimeoPoster(this, 0)" style="background-image: url(video/1.jpeg);">
-                            <a href="#main_box">
+                        <div id="box1" class="more_box-content" onclick="newVimeoVideo(this, 0); VimeoPoster(this, 0)" style="background-image: url(video/1.jpeg);">
+                            <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 1</h3>
+                                    <span class="duration">00:30</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="more_box-content" onclick="newVideo(1); newVimeoVideo(1); VimeoPoster(this, 1)" style="background-image: url(video/2.png);">
-                            <a href="#main_box">
+                        <div id="box2" class="more_box-content" onclick="newVimeoVideo(this, 1); VimeoPoster(this, 1)" style="background-image: url(video/2.png);">
+                            <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 2</h3>
+                                    <span class="duration">00:30</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="more_box-content" onclick="newVideo(2); newVimeoVideo(2); VimeoPoster(this, 2)" style="background-image: url(video/3.png);">
-                            <a href="#main_box">
+                        <div id="box3" class="more_box-content" onclick="newVimeoVideo(this, 2); VimeoPoster(this, 2)" style="background-image: url(video/3.png);">
+                            <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 3</h3>
+                                    <span class="duration">00:30</span>
                                 </div>
                             </a>
                         </div>
 
 
-                        <div class="more_box-content" onclick="newVideo(3); newVimeoVideo(3);VimeoPoster(this, 3);" style="background-image: url(video/4.png);">
-                            <a href="#main_box">
+                        <div id="box4" class="more_box-content" onclick="newVimeoVideo(this, 3);VimeoPoster(this, 3);" style="background-image: url(video/4.png);">
+                            <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 4</h3>
+                                    <span class="duration">00:30</span>
                                 </div>
                             </a>
                         </div>
+
+                        <!-- Загрузка информации о видео в плитке -->
+                        <script type="text/javascript">
+                            var box = document.getElementsByClassName('more_box-content');
+                            for (var i = box.length - 1; i >= 0; i--) {VimeoPoster(box[i], i);}
+                        </script>
 
                     </div>
                 </div>
@@ -179,36 +181,30 @@
                 <!-- end Bio block -->
 
             </main>
-            <footer>
-                <div id="footer_topline"></div>
-                <div id="footer_info">
-                    <p>&copy; 2018 by Vadim Safronov.</p>
-                </div>
-                <div id="footer_socialbar">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <img src="images/vimeo.png">
-                            </a>
-                    </li><!-- 
-                --><li>
-                    <a href="#">
-                        <img src="images/facebook.png">
-                    </a>
-                    </li><!-- 
-                --><li>
-                    <a href="#">
-                        <img src="images/you_tube.png">
-                    </a>
-                    </li><!-- 
-                --><li>
-                    <a href="#">
-                        <img src="images/instagram.png">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-</div>
+        <footer>
+            <div id="footer_topline"></div>
+            <div id="footer_info">
+                <p>&copy; 2018 by Vadim Safronov.</p>
+            </div>
+            <div id="footer_socialbar">
+                <!-- used fontawesome icons -->
+                <a href="https://vk.com">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a href="https://www.facebook.com">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://vimeo.com">
+                    <i class="fab fa-vimeo-v"></i>
+                </a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
