@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=500, initial-scale=1">
+
     <title>VaadimS Media</title>
     <link rel="icon" type="image/png" href="images/logo_mini.png">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -15,10 +18,10 @@
 
 
     <!-- Video Changer -->
-    <script type="text/javascript" src="video-change.js"></script>
+    <script src="video-change.js"></script>
     
     <!-- Visitor IP -->
-    <script type="text/javascript" src="visitor-ip.js"></script>
+    <script src="visitor-ip.js"></script>
 
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -40,6 +43,7 @@
                             <path d="M128.7 89.6c6.8.1 12 5.4 11.9 12.3-.1 6.7-5.6 12.2-12.3 12.1-6.8-.1-12.1-5.5-12-12.4.3-6.8 5.6-12 12.4-12zm4.9 12.3c0-2.8-2.2-5.1-4.9-5.2-2.7-.1-5 2.2-5 5s2.2 5.2 4.9 5.2c2.6.1 4.9-2.3 5-5z"></path>
                             <path d="M133.6 101.9c0 2.7-2.4 5.1-5 5.1-2.7 0-4.9-2.4-4.9-5.2 0-2.8 2.3-5.1 5-5 2.7 0 4.9 2.3 4.9 5.1z"></path>
                         </g>
+                    </svg>
                 </a>
             </div>
             <div id="header_title">
@@ -77,23 +81,23 @@
 
                     <div id="video">
                         
-                        <div id="video-preview" class="view4">
+                        <div id="video-preview">
                             <div id="video-preview-title">VaadimS Portfolio</div>
 
-                            <!-- описание -->
-                            <!-- <div id="video-preview-description">Roady Productions</div> -->
+                            <!-- автор -->
+                            <div id="video-preview-author"></div>
 
                             <button onclick="startVideo()"><i class="fas fa-play fa-sm"></i> Watch Now</button>
                         </div>
 
                         <!-- Vimeo Player -->
-                        <iframe id="Vimeo-player" src="" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="background-image: url(video/4.png);"></iframe>
+                        <iframe id="Vimeo-player" src="" width="640" height="360" frameborder="0" allowfullscreen style="background-image: url(video/4.png);"></iframe>
                         <!-- end Vimeo Player -->
 
                     </div>
 
                     <div id="more_box">
-                        <div id="box1" class="more_box-content" onclick="newVimeoVideo(this, 0); VimeoPoster(this, 0)" style="background-image: url(video/1.jpeg);">
+                        <div id="box1" class="more_box-content" title="Video 1" onclick="newVimeoVideo(this, 0); VimeoPoster(this, 0)" style="background-image: url(video/1.jpeg);">
                             <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 1</h3>
@@ -102,7 +106,7 @@
                             </a>
                         </div>
 
-                        <div id="box2" class="more_box-content" onclick="newVimeoVideo(this, 1); VimeoPoster(this, 1)" style="background-image: url(video/2.png);">
+                        <div id="box2" class="more_box-content" title="Video 2" onclick="newVimeoVideo(this, 1); VimeoPoster(this, 1)" style="background-image: url(video/2.png);">
                             <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 2</h3>
@@ -111,7 +115,7 @@
                             </a>
                         </div>
 
-                        <div id="box3" class="more_box-content" onclick="newVimeoVideo(this, 2); VimeoPoster(this, 2)" style="background-image: url(video/3.png);">
+                        <div id="box3" class="more_box-content" title="Video 3" onclick="newVimeoVideo(this, 2); VimeoPoster(this, 2)" style="background-image: url(video/3.png);">
                             <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 3</h3>
@@ -121,7 +125,7 @@
                         </div>
 
 
-                        <div id="box4" class="more_box-content" onclick="newVimeoVideo(this, 3);VimeoPoster(this, 3);" style="background-image: url(video/4.png);">
+                        <div id="box4" class="more_box-content" title="Video 4" onclick="newVimeoVideo(this, 3);VimeoPoster(this, 3);" style="background-image: url(video/4.png);">
                             <a href="#video">
                                 <div class="more_box-border-select">
                                     <h3 class="video_name">Video 4</h3>
@@ -131,7 +135,7 @@
                         </div>
 
                         <!-- Загрузка информации о видео в плитке -->
-                        <script type="text/javascript">
+                        <script>
                             var box = document.getElementsByClassName('more_box-content');
                             for (var i = box.length - 1; i >= 0; i--) {VimeoPoster(box[i], i);}
                         </script>
@@ -142,7 +146,7 @@
 
                 <!-- Bio block -->
                 <div id="Bio">
-                    <img id="bio_image" src="images/bio.png">
+                    <img id="bio_image" src="images/view-sunset.jpg" alt="Photo of Vadim Safronov Videographer">
                     <div id="bio_info" class="clr">
                         <div class="bio_title">
                             <h2>Jeff Carr, b. 2023,</h2>
@@ -155,7 +159,7 @@
                             <p>This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
 
                             <p>Contact me - <br>
-                            <a href="mailto:INFO@MYSITE.COM">INFO@MYSITE.COM</a></p>
+                            <a href="mailto:vaadimsmedia@gmail.com">VaadimsMedia@gmail.com</a></p>
                             
                         </div>
 
@@ -183,26 +187,26 @@
             </main>
         <footer>
             <div id="footer_topline"></div>
-            <div id="footer_info">
-                <p>&copy; 2018 by Vadim Safronov.</p>
-            </div>
             <div id="footer_socialbar">
                 <!-- used fontawesome icons -->
-                <a href="https://vk.com">
+                <a href="https://vk.com/vaadimsmedia" target="_blank">
                     <i class="fab fa-vk"></i>
                 </a>
-                <a href="https://www.facebook.com">
+                <a href="https://www.facebook.com/vaadims" target="_blank">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://instagram.com">
+                <a href="https://instagram.com/vaadims" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://youtube.com">
+                <a href="https://youtube.com/channel/UCX1eHGutzGSv5-PO87TXl8w" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://vimeo.com">
+                <a href="https://vimeo.com/vaadims" target="_blank">
                     <i class="fab fa-vimeo-v"></i>
                 </a>
+            </div>
+            <div id="footer_info">
+                <p>&copy; 2018 by Vadim Safronov.</p>
             </div>
         </footer>
     </div>

@@ -1,20 +1,25 @@
 
-// alert('Этот сайт создан по заказу Вадика ака ПИЗДИЛЫ Сафронова. Приятного просмотра!');
-
-var video_Now = 0; //index 0, Индекс видео в плеере!
-
 //!!!!!!!!!!!!!!!!!!!
 // id видосов Vimeo
 // example:
 //         https://vimeo.com/{id видоса}
 var vimeo_file = [
-    "199896940", //index 0, это Опыт - Maaskantje
-    "224036340", //index 1, Ruka may 17
-    "157497014", //index 2, Shredwood
-    "160966193", //index 3, Мокрое стекло
+    // VaadimS
+    "247843675", //index 0,
+    "254669553", //index 1,
+    "249650837", //index 2,
+    "255243953", //index 3,
+
+    // Опыт
+    //"199896940", //index 0, это Опыт - Maaskantje
+    //"224036340", //index 1, Ruka may 17
+    //"157497014", //index 2, Shredwood
+    //"160966193", //index 3, Мокрое стекло
 ];
 // !!!!!!!!!!!!!!!!!!
 
+// Выбор основного видео
+var video_Now = 0; //index 0, Индекс видео в плеере!
 
 
 function viewHome() {
@@ -61,7 +66,8 @@ function VimeoPoster(obj, i=0){
 
     var info = infoFromVimeo(i);
     // загрузка постере Шириной 640px
-    var url_poster = info.thumbnail_large; 
+    var url_poster = info.thumbnail_large;
+    obj.title = info.title;
     obj.style.backgroundImage = 'url(' + url_poster + ')';
     obj.getElementsByClassName('video_name')[0].innerText = info.title;
     obj.getElementsByClassName('duration')[0].innerText = formatTime(info.duration);
@@ -123,10 +129,9 @@ function newVimeoVideo(obj, i=0) {
     player.style.backgroundImage = obj.style.backgroundImage;
     document.getElementById('video-preview-title').innerText = obj.getElementsByClassName('video_name')[0].innerText;
 
+    // test!
+    document.getElementById('video-preview-author').innerText = infoFromVimeo(video_Now).user_name;
 
-    // var url_video = 'https://player.vimeo.com/video/{video}?color=ffffff&title=0&byline=0&portrait=0';
-    // var autoplay = '&autoplay=1'
-    // player.src = url_video.replace('{video}', vimeo_file[i]);
 }
 
 function startVideo() {
