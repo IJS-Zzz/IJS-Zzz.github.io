@@ -40,7 +40,6 @@ a{
 
 #container{
     /*width: 980px;*/
-    /*max-width: 500px;*/
     max-width: 980px;
     min-width: 500px;
     min-height: 100%;
@@ -197,14 +196,17 @@ main{
     /*width: 980px;*/
     width: 100%;
 
-    min-height: 964px;
-    padding: 20px 0 10px 0;
+    /*min-height: 964px;*/
+    /*padding: 20px 0 10px 0;*/
+    padding: 2% 0 10px 0;
     
     position: relative;
 }
 
 #Home{
-    margin-top: 15px;
+    /*margin-top: 15px;*/
+    /*margin-top: 35px;*/
+    padding-top: 3%;
 }
 
 /*Основное видео*/
@@ -213,17 +215,27 @@ main{
     /*width: 904px;*/
     width: 92%;
 
-    height: 508px;
+    /*height: 508px;*/
+    height: 0;
+    padding-bottom: 51.817%;
 
     margin: 0 auto;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 #video-preview{
     position: absolute;
+    
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+
     /*width: 904px;*/
     width: 100%;
 
-    height: 508px;
+    /*height: 508px;*/
+    /*height: 100%*/
     z-index: 5;
 
     text-align: center;
@@ -262,6 +274,11 @@ main{
 
 
 #Vimeo-player{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background: #ccc;
@@ -271,10 +288,11 @@ main{
 
 /*Ещё работы*/
 #more_box{
+
     /*width: 904px;*/
     width: 92%;
 
-    min-height: 533px;
+    /*min-height: 533px;*/
 
     margin: 20px auto;
 }
@@ -286,12 +304,16 @@ main{
 }
 
 .more_box-content{
+    position: relative;
+
     background: #999;
     
     /*width: 447px;*/
     width: 49.5%;
+    /*min-width: 300px;*/
+    height: 0;
+    padding-bottom: 28%;
 
-    height: 251px;
     float: left;
     margin-bottom: 12px;
 
@@ -393,14 +415,15 @@ main{
 .bio_col1{
     float: left;
     width: 400px;
-    margin: 0 0 0 25px;
+    margin: 0 0 25px 25px;
 }
 .bio_col1 p{
     margin: 10px 0 20px 0;
 }
 .bio_col2{
     float: right;
-    width: 300px;
+    /*width: 300px;*/
+    width: 350px;
     /*margin: 100px 0 0 0;*/
 }
 
@@ -415,6 +438,21 @@ main{
     margin-right: 42px;
 }
 
+.bio_col2_text{
+    width: 300px;
+    float: left;
+}
+
+.bio_col2_line{
+    /*Высота линии*/
+    height: 450px;
+    /*_____________*/
+
+    float: left;
+    width: 1px;
+    border-left: 1px solid rgba(212, 212, 210, 1);
+    margin-right: 42px;
+}
 
 
 /*-------END MAIN-------*/
@@ -443,3 +481,16 @@ main{
     background: #aaa;
 }
 /*End Test Mode*/
+
+
+
+@media print {
+    #container{
+        display: none;
+    }
+    body:before{
+        content: Сафронов Лох!;
+        
+    }
+    
+}
