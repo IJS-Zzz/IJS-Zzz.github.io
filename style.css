@@ -1,3 +1,7 @@
+
+/*!!!   Убрать Тест мод в конце   !!!*/
+/*   там есть строка "Сафронов лох"   */
+
 /*Импорт шрифта Montserrat*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700');
 
@@ -222,20 +226,21 @@ main{
     margin: 0 auto;
     /*padding-top: 20px;*/
 }
+
+
 #video-preview{
+    display: table;
     position: absolute;
-    
 
     left: 0;
     top: 0;
     bottom: 0;
 
-
     /*width: 904px;*/
     width: 100%;
 
     /*height: 508px;*/
-    /*height: 100%*/
+    height: 100%;
     z-index: 5;
 
     text-align: center;
@@ -243,9 +248,15 @@ main{
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+#video-preview-box-content{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5%;
+}
+
 
 #video-preview-title{
-    margin-top: 21%;
+    /*margin-top: 21%;*/
     font-size: 40px;
 }
 #video-preview-author{
@@ -256,7 +267,8 @@ main{
 #video-preview button{
     width: 160px;
     height: 40px;
-    margin-top: 36px;
+    /*margin-top: 36px;*/
+    margin-top: 20px;
     padding: 5px 20px;
     border-radius: 20px;
     background: #414141;
@@ -310,7 +322,7 @@ main{
     
     /*width: 447px;*/
     width: 49.5%;
-    /*min-width: 300px;*/
+    min-width: 250px;
     height: 0;
     padding-bottom: 28%;
 
@@ -319,6 +331,8 @@ main{
 
     box-sizing: border-box;
     background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 
 }
@@ -326,6 +340,15 @@ main{
     /*margin-right: 10px;*/
     margin-right: 1%;
 }
+.more_box-content a{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .more_box-border-select{
     width: 100%;
     height: 100%;
@@ -422,36 +445,11 @@ main{
 }
 .bio_col2{
     float: right;
-    /*width: 300px;*/
-    width: 350px;
-    /*margin: 100px 0 0 0;*/
-}
-
-.line{
-    /*Высота линии*/
-    height: 450px;
-    /*_____________*/
-
-    float: right;
-    width: 1px;
-    border-left: 1px solid rgba(212, 212, 210, 1);
-    margin-right: 42px;
-}
-
-.bio_col2_text{
     width: 300px;
-    float: left;
-}
 
-.bio_col2_line{
-    /*Высота линии*/
-    height: 450px;
-    /*_____________*/
-
-    float: left;
-    width: 1px;
     border-left: 1px solid rgba(212, 212, 210, 1);
-    margin-right: 42px;
+    padding-left: 42px;
+    margin-left: 35px;
 }
 
 
@@ -459,12 +457,6 @@ main{
 
 
 /*Test Mod*/
-/*#Home{
-    display: none;
-}
-#Bio{
-    display: block;
-}*/
 .view{
     background: #eee;
 }
@@ -490,7 +482,30 @@ main{
     }
     body:before{
         content: Сафронов Лох!;
-        
     }
     
 }
+
+/*Уменьшим шрифты заголовка превью*/
+@media (max-width: 700px) {
+    #video-preview-title{
+        font-size: 30px;
+    }
+
+    .more_box-content{
+        float: none;
+        width: 300px;
+        height: 170px;
+        padding-bottom: 0;
+        margin-left: 20px;
+    }
+
+    
+
+}
+
+
+
+
+
+

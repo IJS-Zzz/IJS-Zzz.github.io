@@ -121,7 +121,10 @@ function newVimeoVideo(obj, i=0) {
     video_Now = i;
 
     var preview = document.getElementById('video-preview');
-    preview.style.display = 'block';
+    // preview.style.display = 'block';
+
+    // при переходе на табличное выравнивание превью видоса
+    preview.style.visibility = 'visible';
 
 
     var player = document.getElementById('Vimeo-player');
@@ -130,7 +133,7 @@ function newVimeoVideo(obj, i=0) {
     document.getElementById('video-preview-title').innerText = obj.getElementsByClassName('video_name')[0].innerText;
 
     // test!
-    document.getElementById('video-preview-author').innerText = infoFromVimeo(video_Now).user_name;
+    // document.getElementById('video-preview-author').innerText = infoFromVimeo(video_Now).user_name;
 
 }
 
@@ -138,7 +141,10 @@ function startVideo() {
     var i = video_Now;
 
     var preview = document.getElementById('video-preview');
-    preview.style.display = 'none';
+    // preview.style.display = 'none';
+
+    // при переходе на табличное выравнивание превью видоса
+    preview.style.visibility = 'hidden';
 
     var player = document.getElementById('Vimeo-player');
     var url_video = 'https://player.vimeo.com/video/{video}?color=ffffff&title=0&byline=0&portrait=0';
