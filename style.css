@@ -101,12 +101,16 @@ header{
     width: 100%;
     color: #414141;
     transition: color 0.4s ease 0s;
+    border-radius: 5px;
 
     text-align: center;
     line-height: 24px;
 }
 #header_menu a:hover{
     color: #A8A8A7;
+}
+#header_menu a:active{
+    background: #eee;
 }
 
 
@@ -182,14 +186,27 @@ footer{
     position: absolute;
     top: 23px;
     height: 20px;
-    color: #999999;
-
-    letter-spacing: 20px;
-    font-size: 16px;
 }
+
+#footer_socialbar a{
+    display: inline-block;
+    width: 30px;
+    /*height: 25px;*/
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 5px;
+    
+    font-size: 16px;
+    color: #999999;
+}
+
 #footer_socialbar a:hover{
     color: #414141;
 }
+#footer_socialbar a:active{
+    background: #eee;
+}
+
 
 /*-------END FOOTER-------*/
 
@@ -272,6 +289,8 @@ main{
     padding: 5px 20px;
     border-radius: 20px;
     background: #414141;
+
+    border: 1px solid #454545;
 
     color: #fff;
     font-size: 14px;
@@ -498,6 +517,7 @@ main{
         height: 170px;
         padding-bottom: 0;
         margin-left: 20px;
+        margin-bottom: 20px;
     }
 
     
