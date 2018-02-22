@@ -1,9 +1,25 @@
 
-/*!!!   Убрать Тест мод в конце   !!!*/
-/*   там есть строка "Сафронов лох"   */
-
 /*Импорт шрифта Montserrat*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700');
+
+
+/*Test Mod*/
+.view{
+    background: #eee;
+}
+.view2{
+    background: #ddd;
+}
+.view3{
+    background: #ccc;
+}
+.view4{
+    background: #bbb;
+}
+.view5{
+    background: #aaa;
+}
+/*End Test Mode*/
 
 
 /* ClearFix */
@@ -12,7 +28,6 @@
     content: "";
     clear: both;
 }
-
 
 *{
     margin: 0;
@@ -43,20 +58,16 @@ a{
 }
 
 #container{
-    /*width: 980px;*/
     max-width: 980px;
     min-width: 500px;
     min-height: 100%;
     position: relative;
     margin: 0 auto;
-
-    /*height: 1397px;*/
 }
 
 
 /*-------HEADER-------*/
 header{
-    /*width: 980px;*/
     width: 100%;
     height: 183px;
     position: relative;
@@ -64,7 +75,6 @@ header{
 
 /* Меню */
 #header_menu{
-    /*left: 472px;*/
     right: 1%;
     width: 505px;
     position: absolute;
@@ -88,11 +98,9 @@ header{
     cursor: pointer;
 }
 #header_menu ul li:nth-child(1){
-    /*width: 75px;*/
     width: 76px;
 }
 #header_menu ul li:nth-child(2){
-    /*width: 147px;*/
     width: 146px;
 }
 #header_menu a{
@@ -149,35 +157,30 @@ header{
 
 /*-------FOOTER-------*/
 footer{
-    /*width: 980px;*/
     width: 100%;
-
     height: 66px;
     position: relative;
 }
 /*Разделяющая линия сверу*/
 #footer_topline{
-    left: 18px;
-    /*width: 950px;*/
-    width: 97%;
-
     position: absolute;
     top: 0px;
-    height: 5px;
+    left: 18px;
+
+    width: 97%;
     border-bottom: 1px solid rgba(212, 212, 210, 1);
-    height: 0 !important;
-    min-height: 0 !important;
 }
 
 /*Копирайты*/
 #footer_info{
-    left: 18px;
-    width: 370px;
     position: absolute;
     top: 24px;
+    left: 18px;
+    width: 270px;
 
     color: #A8A8A7;
     font-size: 14px;
+    /*font-size: 16px;*/
 }
 
 /*Ссылки на соц сети*/
@@ -186,17 +189,19 @@ footer{
     position: absolute;
     top: 23px;
     height: 20px;
+    width: 200px;
+    text-align: right;
 }
 
 #footer_socialbar a{
     display: inline-block;
     width: 30px;
-    /*height: 25px;*/
     margin-left: 5px;
     text-align: center;
     border-radius: 5px;
     
-    font-size: 16px;
+    /*font-size: 16px;*/
+    font-size: 18px;
     color: #999999;
 }
 
@@ -214,34 +219,23 @@ footer{
 
 /*-------MAIN-------*/
 main{
-    /*width: 980px;*/
     width: 100%;
-
-    /*min-height: 964px;*/
-    /*padding: 20px 0 10px 0;*/
     padding: 2% 0 10px 0;
     
     position: relative;
 }
 
 #Home{
-    /*margin-top: 15px;*/
-    /*margin-top: 35px;*/
     padding-top: 3%;
 }
 
 /*Основное видео*/
 #video{
     position: relative;
-    /*width: 904px;*/
     width: 92%;
-
-    /*height: 508px;*/
     height: 0;
-    padding-bottom: 51.817%;
-
     margin: 0 auto;
-    /*padding-top: 20px;*/
+    padding-bottom: 51.817%;
 }
 
 
@@ -254,9 +248,8 @@ main{
     bottom: 0;
 
     /*width: 904px;*/
-    width: 100%;
-
     /*height: 508px;*/
+    width: 100%;
     height: 100%;
     z-index: 5;
 
@@ -273,7 +266,6 @@ main{
 
 
 #video-preview-title{
-    /*margin-top: 21%;*/
     font-size: 40px;
 }
 #video-preview-author{
@@ -303,7 +295,6 @@ main{
 }
 
 
-
 #Vimeo-player{
     position: absolute;
     left: 0;
@@ -318,20 +309,22 @@ main{
 
 
 /*Ещё работы*/
-#more_box{
-
-    /*width: 904px;*/
+#title_for_more_box{
     width: 92%;
+    margin: 30px auto;
+    padding-left: 20px;
+}
+#title_for_more_box h2{
+    font-weight: 400;
+    font-size: 24px;
+}
 
+#more_box{
+    /*width: 904px;*/
     /*min-height: 533px;*/
 
+    width: 92%;
     margin: 20px auto;
-}
-/* ClearFix */
-#more_box:after{
-    display: block;
-    content: "";
-    clear: both;
 }
 
 .more_box-content{
@@ -413,12 +406,10 @@ main{
 /* Bio */
 #Bio{
     display: none;
-    
     width: 100%;
 }
 #bio_image{
     display: block;
-    /*width: 948px;*/
     width: 97%;
 
     margin: 0 auto;
@@ -426,7 +417,6 @@ main{
 #bio_info{
     box-sizing: border-box;
     position: relative;
-    /*width: 948px;*/
     width: 97%;
     
 
@@ -475,37 +465,8 @@ main{
 /*-------END MAIN-------*/
 
 
-/*Test Mod*/
-.view{
-    background: #eee;
-}
-.view2{
-    background: #ddd;
-}
-.view3{
-    background: #ccc;
-}
-.view4{
-    background: #bbb;
-}
-.view5{
-    background: #aaa;
-}
-/*End Test Mode*/
 
-
-
-@media print {
-    #container{
-        display: none;
-    }
-    body:before{
-        content: Сафронов Лох!;
-    }
-    
-}
-
-/*Уменьшим шрифты заголовка превью*/
+/*-------MOBILE VIEW-------*/
 @media (max-width: 700px) {
     #video-preview-title{
         font-size: 30px;
@@ -519,12 +480,8 @@ main{
         margin-left: 20px;
         margin-bottom: 20px;
     }
-
-    
-
 }
-
-
+/*-------END MOBILE VIEW-------*/
 
 
 

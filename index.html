@@ -8,13 +8,6 @@
     <title>VaadimS Media</title>
     <link rel="icon" type="image/png" href="images/logo_mini.png">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
-    <!-- VideoJS Player -->
-    <link href="video-js/video-js.css" rel="stylesheet">
-
-    <!-- If you'd like to support IE8 -->
-    <script src="video-js/videojs-ie8.min.js"></script>
-
 
     <!-- Video Changer -->
     <script src="video-change.js"></script>
@@ -26,12 +19,15 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script defer src="fontawesome-all.js"></script>
 
+    <noscript>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    </noscript>
 </head>
 <body>
     <div id='container'>
         <header>
             <div id="header_logo">
-                <a href="#" onclick="viewHome()">
+                <a href="index.html" onclick="viewHome();return false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-0.0576624870300293 30.464908599853516 200.05764770507812 143.03509521484375" role="img" preserveAspectRatio="xMidYMid meet" style="stroke-width: 0px;">
                         <g>
                             <path d="M199.2 91.1c-5.7-39.5-44.9-67.4-83.9-59.2-28 5.9-47 22.8-54.8 50.4-7.9 28-.4 52.5 20.7 72.6 4.5 4.3 10 7.6 15.5 11.7H2.1c-.1 0-.2.1-.3.1-2.3 1.4-2.5 4.7-.4 6.4.1.1.3.2.4.3h22.8v.1h104.2c31.1 0 59.3-21.1 68.2-51 .7-2.3 1.2-4.7 1.8-7.1.8-3.7 1.2-7.5 1.2-11.3v-3.8c0-3.1-.3-6.1-.8-9.2 0 .1 0 0 0 0zM129 166.4c-35.3 0-64.5-29.3-64.5-64.7.1-35.5 28.6-63.9 64.1-63.9 35.5 0 64.8 29 64.9 64.3.1 35-29.3 64.3-64.5 64.3z"></path>
@@ -47,27 +43,22 @@
             </div>
             <div id="header_title">
                 <h1>
-                    <a href="#" onclick="viewHome()">
-                        <!-- JEFF CARR -->
+                    <a href="index.html" onclick="viewHome();return false">
                         VaadimS
-                        <!-- VADIM S -->
                         <br>
                     </a>
-                    <a href="#" onclick="viewHome()">
-                        <!-- VIDEOGRAPHER -->
+                    <a href="index.html" onclick="viewHome();return false">
                         Media
-                        <!-- MEDIA -->
                     </a>
                 </h1>
             </div>
             <div id="header_menu">
                 <ul>
                     <li>
-                        <a id="menu_home" href="#" onclick="viewHome()">home</a>
+                        <a id="menu_home" href="index.html" onclick="viewHome();return false">home</a>
                     </li>
-
                     <li>
-                        <a id="menu_bio" href="#" onclick="viewBio()">bio &amp; contact</a>
+                        <a id="menu_bio" href="bio.html" onclick="viewBio();return false">bio &amp; contact</a>
                     </li>
                 </ul>
             </div>
@@ -81,70 +72,84 @@
                     <div id="video">
                         
                         <div id="video-preview">
-                            <!-- <div id="video-preview-title">VaadimS Portfolio</div>
-
-                            <div id="video-preview-author"></div> -->
-
-
                             <div id="video-preview-box-content">
-
                                 <div id="video-preview-title">VaadimS Portfolio</div>
-
                                 <div id="video-preview-author"></div>
-
                                 <button onclick="startVideo()"><i class="fas fa-play fa-sm"></i> Watch Now</button>
                             </div>
-                            
-
-
-                            <!-- <h1 id="video-preview-title">VaadimS Portfolio</h1>
-
-                            
-                            <h5 id="video-preview-author"></h5> -->
-
-                            
                         </div>
 
 
-
                         <!-- Vimeo Player -->
-                        <iframe id="Vimeo-player" width="640" height="360" allowfullscreen style="background-image: url(video/4.png);"></iframe>
+                        <iframe id="Vimeo-player" width="640" height="360" allowfullscreen
+                            style="background-image: url(images/video/4.png);"
+                            ></iframe>
                         <!-- end Vimeo Player -->
 
                     </div>
+                    
 
-                    <div id="more_box">
-                        <div id="box1" class="more_box-content" title="Video 1" onclick="newVimeoVideo(this, 0); VimeoPoster(this, 0)" style="background-image: url(video/1.jpeg);">
+                    <!-- Title for More Box -->
+                    <div id="title_for_more_box">
+                        <h2>VaadimS Portfolio</h2>
+                    </div>
+
+                    <div id="more_box" class="clr">
+
+                        <!-- Block 1 -->
+                        <div id="box1" class="more_box-content"
+                            title="Video 1"
+                            style="background-image: url(images/video/1.jpeg);"
+                            onclick="newVimeoVideo(this, 0); VimeoPoster(this, 0)"
+                            >
                             <a href="#video">
                                 <div class="more_box-border-select">
+
                                     <h3 class="video_name">Video 1</h3>
                                     <span class="duration">00:30</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div id="box2" class="more_box-content" title="Video 2" onclick="newVimeoVideo(this, 1); VimeoPoster(this, 1)" style="background-image: url(video/2.png);">
+                        <!-- Block 2 -->
+                        <div id="box2" class="more_box-content"
+                            title="Video 2"
+                            style="background-image: url(images/video/2.png);"
+                            onclick="newVimeoVideo(this, 1); VimeoPoster(this, 1)"
+                            >
                             <a href="#video">
                                 <div class="more_box-border-select">
+
                                     <h3 class="video_name">Video 2</h3>
                                     <span class="duration">00:30</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div id="box3" class="more_box-content" title="Video 3" onclick="newVimeoVideo(this, 2); VimeoPoster(this, 2)" style="background-image: url(video/3.png);">
+                        <!-- Block 3 -->
+                        <div id="box3" class="more_box-content"
+                            title="Video 3"
+                            style="background-image: url(images/video/3.png);"
+                            onclick="newVimeoVideo(this, 2); VimeoPoster(this, 2)"
+                            >
                             <a href="#video">
                                 <div class="more_box-border-select">
+
                                     <h3 class="video_name">Video 3</h3>
                                     <span class="duration">00:30</span>
                                 </div>
                             </a>
                         </div>
 
-
-                        <div id="box4" class="more_box-content" title="Video 4" onclick="newVimeoVideo(this, 3);VimeoPoster(this, 3);" style="background-image: url(video/4.png);">
+                        <!-- Block 4 -->
+                        <div id="box4" class="more_box-content"
+                            title="Video 4"
+                            style="background-image: url(images/video/4.png);"
+                            onclick="newVimeoVideo(this, 3);VimeoPoster(this, 3);"
+                            >
                             <a href="#video">
                                 <div class="more_box-border-select">
+
                                     <h3 class="video_name">Video 4</h3>
                                     <span class="duration">00:30</span>
                                 </div>
@@ -154,7 +159,9 @@
                         <!-- Загрузка информации о видео в плитке -->
                         <script>
                             var box = document.getElementsByClassName('more_box-content');
-                            for (var i = box.length - 1; i >= 0; i--) {VimeoPoster(box[i], i);}
+                            for (var i = box.length - 1; i >= 0; i--) {
+                                VimeoPoster(box[i], i);
+                            }
                         </script>
 
                     </div>
@@ -163,7 +170,12 @@
 
                 <!-- Bio block -->
                 <div id="Bio">
-                    <img id="bio_image" src="images/view-sunset.jpg" alt="Photo of Vadim Safronov Videographer">
+                    <!-- Bio Image -->
+                    <img id="bio_image"
+                        src="images/view-sunset.jpg"
+                        alt="Photo of Vadim Safronov Videographer"
+                        >
+                    <!-- Bio Text -->
                     <div id="bio_info" class="clr">
                         <div class="bio_title">
                             <h2>Jeff Carr, b. 2023,</h2>
@@ -192,15 +204,15 @@
                             2023, I’m an item. ​Click here to edit me.<br>
                             2023, I’m an item. ​Click here to edit me.<br></p>
                         </div>
-
                     </div>
-                    
                 </div>
                 <!-- end Bio block -->
-
             </main>
+
         <footer>
             <div id="footer_topline"></div>
+
+            <!-- Social Link -->
             <div id="footer_socialbar">
                 <!-- used fontawesome icons -->
                 <a href="https://vk.com/vaadimsmedia" target="_blank">
@@ -219,6 +231,8 @@
                     <i class="fab fa-vimeo-v"></i>
                 </a>
             </div>
+
+            <!-- Copyright -->
             <div id="footer_info">
                 <p>&copy; 2018 by Vadim Safronov.</p>
             </div>
