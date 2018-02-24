@@ -29,9 +29,7 @@ function send_message_to_Tbot(text, token=botTelegram_token) {
     var bot = new XMLHttpRequest();
     bot.open('GET', url, true);
     bot.send();
-
 }
-
 
 
 

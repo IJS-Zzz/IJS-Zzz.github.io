@@ -11,7 +11,7 @@ var vimeo_file = [
     "255243953", //index 3,
 
     // Опыт
-    // "199896940", //index 0, это Опыт - Maaskantje
+    //"199896940", //index 0, это Опыт - Maaskantje
     //"224036340", //index 1, Ruka may 17
     //"157497014", //index 2, Shredwood
     //"160966193", //index 3, Мокрое стекло
@@ -26,6 +26,7 @@ function viewHome() {
     home = document.getElementById('Home');
     bio = document.getElementById('Bio');
 
+    // playerAPI.play();
     home.style.display = 'block';
     bio.style.display = 'none';
 }
@@ -34,6 +35,7 @@ function viewBio() {
     home = document.getElementById('Home');
     bio = document.getElementById('Bio');
 
+    playerAPI.pause();
     home.style.display = 'none';
     bio.style.display = 'block';
 }
@@ -113,7 +115,7 @@ function formatTime(duration) {
     return time;
 }
 
-
+///!!!!!!!!!!!!!!!!!!
 
 function newVimeoVideo(obj, i=0) {
     i = indexFile(vimeo_file, i);
@@ -126,9 +128,12 @@ function newVimeoVideo(obj, i=0) {
     // при переходе на табличное выравнивание превью видоса
     preview.style.visibility = 'visible';
 
+    // загрузка фона для background preview из плитки
+    document.getElementById('video-preview-background').style.backgroundImage = obj.style.backgroundImage;
+
 
     var player = document.getElementById('Vimeo-player');
-    player.src = "";
+    player.src = "about:blank";
     player.style.backgroundImage = obj.style.backgroundImage;
     document.getElementById('video-preview-title').innerText = obj.getElementsByClassName('video_name')[0].innerText;
 
