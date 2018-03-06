@@ -23,21 +23,31 @@ var video_Now = 0; //index 0, Индекс видео в плеере!
 
 
 function viewHome() {
-    home = document.getElementById('Home');
-    bio = document.getElementById('Bio');
-
     // playerAPI.play();
-    home.style.display = 'block';
-    bio.style.display = 'none';
+    document.getElementById('Home').style.display = 'block';
+    document.getElementById('Bio').style.display = 'none';
+
+
+    // home = document.getElementById('Home');
+    // bio = document.getElementById('Bio');
+
+    // // playerAPI.play();
+    // home.style.display = 'block';
+    // bio.style.display = 'none';
 }
 
 function viewBio() {
-    home = document.getElementById('Home');
-    bio = document.getElementById('Bio');
-
     playerAPI.pause();
-    home.style.display = 'none';
-    bio.style.display = 'block';
+    document.getElementById('Home').style.display = 'none';
+    document.getElementById('Bio').style.display = 'block';
+
+
+    // home = document.getElementById('Home');
+    // bio = document.getElementById('Bio');
+
+    // playerAPI.pause();
+    // home.style.display = 'none';
+    // bio.style.display = 'block';
 }
 
 function indexFile(files, i=0){
@@ -120,7 +130,7 @@ function formatTime(duration) {
 function newVimeoVideo(obj, i=0) {
     i = indexFile(vimeo_file, i);
 
-    video_Now = i;
+    var video_Now = i;
 
     var preview = document.getElementById('video-preview');
     // preview.style.display = 'block';
