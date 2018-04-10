@@ -1,0 +1,31 @@
+Add jQuery for work correct on all devices
+
+In index.html add:
+
+    <!-- jQuery 3.3.1 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- main JS -->
+    <script src="main.js"></script>
+
+
+In js file 'main.js':
+
+    $(function(){
+        $("#menu_home").click(function() {
+            alert('Home');
+            $("#Home").show();
+            $("#Bio").hide();
+        });
+    
+        $("#menu_bio").click(function() {
+            alert('Bio');
+            $("#Home").hide();
+            $("#Bio").show();
+        });
+    });
+
+Note:
+    $(function(){       // == Document.ready
+        //code...
+    });
