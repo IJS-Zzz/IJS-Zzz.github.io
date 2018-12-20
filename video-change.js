@@ -130,7 +130,8 @@ function formatTime(duration) {
 function newVimeoVideo(obj, i=0) {
     i = indexFile(vimeo_file, i);
 
-    var video_Now = i;
+    video_Now = i;  // change global var
+    // var video_Now = i;  // change local var
 
     var preview = document.getElementById('video-preview');
     // preview.style.display = 'block';
